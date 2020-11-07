@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>Manipulando a DOM</title>
+</head>
+<body>
+    <a href="file:///home/aas/js-starter/introjs.html">Voltar para o início</a>
+    <h1 >Conteúdos do Starter da RocketSeat
+        <img src="img/programming.gif" 
+        alt="computer man" style="width:50px;height:60px;" 
+        style="float:right;width:42px;height:42px;">
+    </h1>
+
+    <h2>Manipulando a DOM</h2>
+    <ul>
+        <li>Eventos inline</li>
+        <li>Trabalhando com a DOM</li>
+        <li>Lidando com elementos</li>
+        <li>Alterando estilos</li>
+    </ul>
+
+    <div id="app">
+        <div class="box"></div>
+        <input id="nome">
+    
+        <input type="text" name="nome" />
+        <input type="text" name="nome2" id="nome2" class="nome"/>
+        <input type="text" name="nome3" id="nome3"/> 
+        <button class="botao" o>Adicionar</button>
+        <input onkeypress="mostraAlertaOnKey()"/>
+        <button onclick="mostraAlerta()">Me pressione</button>
+        <button onmouseover="mostraAlertaOn()">Me pressione</button>
+    </div>
+        <script>
+    
+            var linkElement = document.createElement('a');
+            linkElement.setAttribute('href', 'file:///home/aas/js-starter/index.html');
+            linkElement.setAttribute('title', 'App de TODOS');
+            
+            var textElement = document.createTextNode('App de TODOS');
+            linkElement.appendChild(textElement);
+    
+            var containerElement = document.querySelector('#app');
+            containerElement.appendChild(linkElement);
+    
+            var inputElement = document.querySelector('#nome')
+            containerElement.removeChild(inputElement);
+    
+    
+            var inputElement = document.getElementById('nome');
+            var inputElement = document.getElementsByTagName('input')[0];
+            var inputElement = document.getElementsByTagName('input');
+            var inputElement = document.getElementsByClassName('nome');
+            var inputElement = document.querySelector('body div#app input');
+            var inputElement = document.querySelector('div#app input');
+            var inputElement = document.querySelectorAll('input');
+            console.log(inputElement);
+            var inputElement = document.querySelector('input[name=nome]');
+            var inputElement2 = document.querySelector('input[name=nome2]');
+            var inputElement3 = document.querySelector('input[name=nome3]');
+            var btnElement = document.querySelector('button.botao');
+    
+            btnElement.onclick = function(){
+                var text = inputElement.value;
+                var text2 = inputElement2.value;
+                var text3 = inputElement3.value;
+                alert(text + ' ' + text2 + ' ' + text3);
+            }
+    
+            function mostraAlertaOn(){
+                alert('Passaram por cima desse botão');
+            }
+
+            function mostraAlerta(){
+                alert('Esse botão foi clicado');
+            }
+
+            function mostraAlertaOnKey(){
+                alert('Digitaram algo nesse input');
+            }
+
+        var boxElement = document.querySelector('.box');
+        boxElement.style.width = 30;
+        boxElement.style.height = 30;
+        boxElement.style.backgroundColor = '#f00';
+        </script>
+
+</body>
+</html>

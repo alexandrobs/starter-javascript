@@ -1,0 +1,294 @@
+<html>
+<head>
+<title>Introdução ao Javascript</title>
+</head>
+<body>
+    <h1 >Conteúdos do Starter da RocketSeat
+        <img src="www/img/programming.gif" 
+        alt="computer man" style="width:50px;height:60px;" 
+        style="float:right;width:42px;height:42px;">
+    </h1>
+
+    <h2>Introdução ao Javascript</h2>
+     
+    <ul>
+        <li>Configurando o ambiente - IDE VSCode</li>
+        <li>Variáveis e dados</li>
+        <li>Operações matemáticas</li>
+        <li>Funções</li>
+        <li>Condicionais</li>
+        <li>Operadores lógicos</li>
+        <li>Condição ternária</li>
+        <li>Estruturas de repetição</li>
+        <li>Intervalo e timeout</li>
+    </ul>
+
+    <h2>Manipulando a DOM</h2>
+    <a href="www/mandom.html">Link ->: Manipulando a DOM</a>
+    <ul>
+        <li>Estrutura do app</li>
+        <li>Iniciando aplicação</li>
+        <li>Renderizando Todos</li>
+        <li>Criando Todos</li>
+        <li>Excluindo Todos</li>
+        <li>Salvando no storage</li>
+    </ul>
+
+    <h2>App de TODOS</h2>
+    <a href="apptodos.html">Link ->: APP de Todos</a>
+    <ul>
+        <li>Eventos inline</li>
+        <li>Trabalhando com a DOM</li>
+        <li>Lidando com elementos</li>
+        <li>Alterando estilos</li>
+    </ul>
+
+    <h2>Javascript Assíncrono</h2>
+    <a href="file:///home/aas/js-starter/jsassinc.html">Link ->: Javascript Assíncrono</a>
+    <br>
+    <a href="file:///home/aas/js-starter/axios.html">Link ->: Utilizando Axios</a>
+    
+    <ul>
+        <li>Requisições AJAX</li>
+        <li>Promises</li>
+        <li>Utilizando Axios</li>
+    </ul>
+
+    <h2>Javascript ES6</h2>
+    <a href="apptodos.html">Link ->: APP de Todos</a>
+    <ul>
+        <li>Instalando Node & Yarn</li>
+        <li>Configurando Babel</li>
+        <li>Classes</li>
+        <li>Const & Let</li>
+        <li>Operações em Array</li>
+        <li>Arrow Functions</li>
+        <li>Valores padrão</li>
+        <li>Desestruturação</li>
+        <li>Operadores rest/spread</li>
+        <li>Template Literals</li>
+        <li>Object Short Syntax</li>
+    </ul>
+
+<script>
+    //hello world
+    console.log("Hello World javascript!");
+    //váriveis e dados
+    console.log("Váriveis e dados");
+    var nome = 'Alex';
+    var idade = 33;
+    var peso = 54.5;
+    var humano = true;
+
+    var alunos = ['Alex','Sofia','Auricelia'];
+
+    var aluno = {
+        nome: 'Sofia',
+        idade: 8,
+        peso: 19.5,
+        humano: true,
+        
+    };
+
+    console.log(alunos);
+    console.log(aluno);
+
+    console.log(alunos [1]);
+    console.log(aluno.peso);
+
+    //operações matemáticas
+    console.log("Operações matemáticas");
+    
+    var x = 10, y = 5;
+        console.log(x, y);
+        console.log(x + y);
+        console.log(x % y);
+        
+        x += 3;
+        console.log(x);
+        x -= 1;
+        console.log(x);
+        x *= y;
+        console.log(x);
+
+    console.log("Funções");
+    
+        function soma(numero1, numero2) {
+            var resultado = numero1 + numero2;
+            return resultado;
+        }
+
+        var resultado = soma(1,2);
+        console.log(resultado);
+
+    console.log("Condicionais");
+    function retornaSexo(sexo) {
+            if (sexo === 'M') {
+                return 'Masculino';
+            } else if (sexo === 'F') {
+                return 'Feminino';
+            }
+                else {
+                return 'Outro';
+            }
+        }
+
+        function retornaSexo2(sexo){
+            switch (sexo) {
+                case 'M':
+                    return 'Masculino';
+                case 'F':
+                    return 'Feminino';
+                default:
+                    return 'Outro';
+            }
+        }
+
+        var qualSexo2 = retornaSexo2('lolo');
+        console.log(qualSexo2)
+
+        var qualSexo = retornaSexo('N');
+        console.log(qualSexo);
+
+    console.log("Operadores lógicos");
+    // AND, OR, NOT
+           var sexo = 'M', idade = 23;
+
+           if(sexo === 'M' || idade >= 24){
+               console.log('OK');
+           } 
+
+        var sexo = 'M';
+        var masculino = sexo !== 'F';
+
+        if (sexo !== 'F'){
+            masculino = true;
+        }else{
+            masculino = false;
+        }
+
+        console.log(masculino);
+
+    console.log("Condição ternária");
+    var sexo = 'M';
+
+        var retorno = (sexo !== 'F') ? 'Masculino' : 'Feminino';
+
+        console.log(retorno);
+
+    console.log("Estruturas de repetição");
+    //for e while
+
+        for(var i = 0; i <= 100; i++){
+            console.log(i);
+        }
+
+        var j = 0;
+        while (j <= 100) {
+            console.log(j);
+
+            j++;
+        }
+
+        var j = 2626262512;
+
+        while (j > 50) {
+            console.log(j);
+            j /= 5;
+        }
+
+    console.log("Intervalo e timeout");
+    function exibeAlgo(){
+            console.log('Hello World');
+        }
+
+        setInterval(exibeAlgo, 1000);
+        setTimeout(exibeAlgo, 10000);
+
+    console.log("Exercícios Módulo 01");
+    console.log("1º exercício");
+    var endereco = {
+            rua: "Rua dos pinheiros",
+            numero: 1293,
+            bairro: "Centro",
+            cidade: "São Paulo",
+            uf: "SP"
+        };
+
+        function getAdress(){
+            // var adress = [endereco.cidade, endereco.uf, 
+            // endereco.bairro, endereco.rua, endereco.numero ];
+            console.log('O usuário mora em ' + endereco.cidade + '/' + endereco.uf + 
+            ', no bairro ' + endereco.bairro + 
+            ', na rua "' + endereco.rua + 
+            '" com nº ' + endereco.numero + '.');
+        }
+
+        console.log(getAdress());
+
+    console.log("2º exercício");
+    function pares(x, y){
+            for (var i = x; i <= y; i++) {
+                if (i % 2 === 0) {
+                    console.log(i);
+                }
+        }
+        }
+        function impares(x, y){
+            for (var i = x; i <= y; i++) {
+                if (i % 2 !== 0) {
+                    console.log(i);
+                }
+            }
+
+        }
+        console.log("Números pares ");
+        console.log(pares(32,321));
+        console.log("Números impares ");
+        console.log(impares(32,321));
+
+    console.log("3º exercício");
+
+    function temHabilidade(){
+            var retorno = skills.indexOf('Javascript');
+            if(retorno >= 0){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+    var skills = ["Javascript", "ReactJS", "React Native"];
+
+        console.log(temHabilidade(skills));
+
+    console.log("4º exercício");
+
+    var anosEstudo = 6;
+        console.log(experiencia(anosEstudo));
+
+        function experiencia(anos) {
+            if (anos === 0 || anos === 1){
+                return 'Iniciante';
+            }else if(anos <= 3){
+                return 'Intermediário';
+            }else if(anos < 7 && anos > 3){
+                return 'Avançado';
+            }else(anos >= 7)
+                return 'Jedi Master';
+        }
+
+        // 0-1 ano: Iniciante
+        // 1-3 anos: Intermediário
+        // 3-6 anos: Avançado
+        // 7 acima: Jedi Master
+
+
+
+    
+
+    
+
+</script>
+</body>
+</html>
